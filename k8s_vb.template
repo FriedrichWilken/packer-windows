@@ -4,7 +4,7 @@
 Vagrant.require_version ">= 1.6.2"
 
 Vagrant.configure("2") do |config|
-    config.vm.define "vagrant-windows-2019"
+    config.vm.define "sig_win_dev_tools"
     config.vm.box = "windows_2019_core_k8s"
     config.vm.communicator = "winrm"
 
@@ -12,9 +12,9 @@ Vagrant.configure("2") do |config|
     config.winrm.username = "vagrant"
     config.winrm.password = "vagrant"
 
-    #config.winssh.username = "vagrant"
-    #config.winssh.password = "vagrant"
-    #config.winssh.shell = "powershell"
+    config.winssh.username = "vagrant"
+    config.winssh.password = "vagrant"
+    config.winssh.shell = "powershell"
 
     config.vm.guest = :windows
     config.windows.halt_timeout = 15

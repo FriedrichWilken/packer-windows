@@ -36,9 +36,9 @@
   "post-processors": [
     {
       "keep_input_artifact": false,
-      "output": "windows_2019_k8s_{{.Provider}}.box",
+      "output": "k8s_{{.Provider}}.box",
       "type": "vagrant",
-      "vagrantfile_template": "vagrantfile-windows_2019_core_k8s_vb.template"
+      "vagrantfile_template": "k8s_vb.template"
     }
   ],
   "provisioners": [
@@ -78,7 +78,8 @@
     },
     {
       "scripts": [
-        "./scripts/k8s/choco-wishlist.ps1"      
+        "./scripts/k8s/choco-wishlist.ps1",   
+        "./scripts/k8s/ssh.ps1"      
       ],
       "type": "powershell"
     }
